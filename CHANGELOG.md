@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.7.5 (2026-03-27)
+
+- Add support for Laravel 13
+
 ## 1.7.4 (2025-06-15)
 
 - Add support for Laravel 12
