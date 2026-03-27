@@ -2,6 +2,7 @@
 
 namespace ElfSundae\Laravel\Hashid;
 
+use Closure;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Manager;
@@ -81,6 +82,16 @@ class HashidManager extends Manager
     public function getDefaultDriver()
     {
         return $this->getDefaultConnection();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function extend($driver, Closure $callback)
+    {
+        $this->customCreators[$driver] = $callback;
+
+        return $this;
     }
 
     /**
