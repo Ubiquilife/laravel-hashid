@@ -37,8 +37,8 @@ jobs:
       - name: Execute tests
         run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
-      - name: Upload code coverage
-        run: |
-          wget https://scrutinizer-ci.com/ocular.phar
-          php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-        if: matrix.php < 8
+      # - name: Upload code coverage
+      #   run: |
+      #     wget https://scrutinizer-ci.com/ocular.phar
+      #     php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+      #   if: matrix.php < 8
