@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('HASHID_CONNECTION', 'hashids_integer'),
+    'default' => env('HASHID_CONNECTION', 'hashids_hex'),
 
     /*
     |--------------------------------------------------------------------------
@@ -35,29 +35,29 @@ return [
         'hashids' => [
             'driver' => 'hashids',
             'salt' => env('HASHIDS_SALT', ''),
-            'min_length' => env('HASHIDS_MIN_LENGTH', 0),
-            'alphabet' => env('HASHIDS_ALPHABET', 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'),
+            'min_length' => env('HASHIDS_MIN_LENGTH', 27),
+            'alphabet' => env('HASHIDS_ALPHABET', '23456789ABCDEFGHJKMPQRSTVWXYZ'),
         ],
 
         'hashids_integer' => [
             'driver' => 'hashids_integer',
-            'salt' => env('HASHIDS_INTEGER_SALT', ''),
-            'min_length' => env('HASHIDS_INTEGER_MIN_LENGTH', 0),
-            'alphabet' => env('HASHIDS_INTEGER_ALPHABET', 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'),
+            'salt' => env('HASHIDS_SALT', ''),
+            'min_length' => env('HASHIDS_MIN_LENGTH', 27),
+            'alphabet' => env('HASHIDS_ALPHABET', '23456789ABCDEFGHJKMPQRSTVWXYZ'),
         ],
 
         'hashids_hex' => [
             'driver' => 'hashids_hex',
-            'salt' => env('HASHIDS_HEX_SALT', ''),
-            'min_length' => env('HASHIDS_HEX_MIN_LENGTH', 0),
-            'alphabet' => env('HASHIDS_HEX_ALPHABET', 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'),
+            'salt' => env('HASHIDS_SALT', ''),
+            'min_length' => env('HASHIDS_MIN_LENGTH', 27),
+            'alphabet' => env('HASHIDS_ALPHABET', '23456789ABCDEFGHJKMPQRSTVWXYZ'),
         ],
 
         'hashids_string' => [
             'driver' => 'hashids_string',
-            'salt' => env('HASHIDS_STRING_SALT', ''),
-            'min_length' => env('HASHIDS_STRING_MIN_LENGTH', 0),
-            'alphabet' => env('HASHIDS_STRING_ALPHABET', 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'),
+            'salt' => env('HASHIDS_SALT', ''),
+            'min_length' => env('HASHIDS_MIN_LENGTH', 27),
+            'alphabet' => env('HASHIDS_ALPHABET', '23456789ABCDEFGHJKMPQRSTVWXYZ'),
         ],
 
         'optimus' => [
