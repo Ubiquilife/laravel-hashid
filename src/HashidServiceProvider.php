@@ -96,6 +96,7 @@ class HashidServiceProvider extends ServiceProvider
             HashidsIntegerDriver::class,
             HashidsStringDriver::class,
             OptimusDriver::class,
+            UuidDriver::class,
         ];
     }
 

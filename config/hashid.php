@@ -46,6 +46,16 @@ return [
             'alphabet' => env('HASHIDS_ALPHABET', '23456789ABCDEFGHJKMPQRSTVWXYZ'),
         ],
 
+        // Short public ids for UUID primary keys. Hashids cannot encode a
+        // UUID (its encode path calls intval, and a UUID exceeds PHP_INT_MAX),
+        // so this reads the UUID as a 128-bit integer and rewrites it in the
+        // alphabet below. Output matches the ids Appbase already issues.
+        'uuid' => [
+            'driver' => 'uuid',
+            'min_length' => env('HASHIDS_MIN_LENGTH', 27),
+            'alphabet' => env('HASHIDS_ALPHABET', '23456789ABCDEFGHJKMPQRSTVWXYZ'),
+        ],
+
         'hashids_hex' => [
             'driver' => 'hashids_hex',
             'salt' => env('HASHIDS_SALT', ''),
